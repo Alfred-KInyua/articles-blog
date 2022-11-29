@@ -1,0 +1,13 @@
+<h1>Create new Article </h1>
+<%= form_with model: @article do |form| %>
+<p><strong><%=form.label :title%></strong><br/>
+<%= form.text_field :title %>
+</p>
+<strong><%=form.label :description%></strong><br/>
+<%= form.text_area :description %><br/>
+<p><%=form.submit%></p>
+
+
+
+
+<% end %>
