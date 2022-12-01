@@ -6,10 +6,16 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    
     @article = Article.new(att_params)
-    @article.save
+    if @article.save
+      flash[:notice]="Article created successfully"
+    else
+      render :new
+    end 
     redirect_to article_path(@article)
-  end
+  
+end
   def show
     @article=Article.find(params[:id])
   end
